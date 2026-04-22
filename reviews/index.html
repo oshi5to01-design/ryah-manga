@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マンガレビュー一覧 | りゃーのマンガ感想</title>
+  <meta name="description" content="りゃーが2000冊以上の中から語るマンガレビュー一覧。少年・少女・青年・女性マンガ、完結済み・連載中まで正直に評価。">
+  <link rel="canonical" href="https://ryah-manga.com/reviews/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="マンガレビュー一覧 | りゃーのマンガ感想">
+  <meta property="og:description" content="2000冊以上読んだりゃーによるマンガレビュー一覧。">
+  <meta property="og:image" content="https://ryah-manga.com/img/og-default.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="container">
+  <div class="page-layout">
+    <div>
+      <div class="category-header">
+        <h1>レビュー一覧</h1>
+        <p>全 <span id="review-count">0</span> 件のレビュー</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;" role="group" aria-label="ジャンルで絞り込み">
+        <button class="btn btn--outline filter-btn active" data-filter="all">すべて</button>
+        <button class="btn btn--outline filter-btn" data-filter="shounen">少年</button>
+        <button class="btn btn--outline filter-btn" data-filter="shoujo">少女</button>
+        <button class="btn btn--outline filter-btn" data-filter="seinen">青年</button>
+        <button class="btn btn--outline filter-btn" data-filter="josei">女性</button>
+        <button class="btn btn--outline filter-btn" data-filter="isekai">異世界</button>
+        <button class="btn btn--outline filter-btn" data-filter="completed" style="border-color:#2e7d32;color:#2e7d32;">✓ 完結</button>
+        <button class="btn btn--outline filter-btn" data-filter="ongoing" style="border-color:#1565c0;color:#1565c0;">▶ 連載中</button>
+      </div>
+
+      <div class="review-grid" id="all-reviews"></div>
+
+      <p id="no-results" style="display:none;color:var(--color-text-muted);padding:24px 0;">
+        該当するレビューがありません。
+      </p>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3>ジャンル</h3>
+        <nav class="sidebar-links">
+          <a href="/category/shounen/">▸ 少年マンガ</a>
+          <a href="/category/shoujo/">▸ 少女マンガ</a>
+          <a href="/category/seinen/">▸ 青年マンガ</a>
+          <a href="/category/josei/">▸ 女性マンガ</a>
+          <a href="/category/isekai/">▸ 異世界・転生</a>
+          <a href="/category/completed/">▸ 完結済み</a>
+          <a href="/category/ongoing/">▸ 連載中</a>
+        </nav>
+      </div>
+      <div class="ad-slot ad-slot--sidebar" aria-hidden="true">広告</div>
+    </aside>
+  </div>
+</main>
+
+<site-footer></site-footer>
+
+<script src="/js/components.js"></script>
+<script src="/js/reviews-index.js"></script>
+<script>
+  let currentFilter = 'all';
+
+  function applyFilter(filter) {
+    currentFilter = filter;
+    const filtered = filter === 'all'
+      ? REVIEWS
+      : filter === 'completed' || filter === 'ongoing'
+        ? REVIEWS.filter(r => r.status === filter)
+        : REVIEWS.filter(r => r.genre.includes(filter));
+
+    renderReviewGrid('all-reviews', filtered);
+    document.getElementById('no-results').style.display = filtered.length ? 'none' : 'block';
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+  });
+
+  document.getElementById('review-count').textContent = REVIEWS.length;
+  applyFilter('all');
+</script>
+
+<style>
+  .filter-btn.active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>りゃーのマンガ感想 — 2000冊以上読んだ人間の正直レビュー</title>
+  <meta name="description" content="2000冊以上読んできたりゃーが、面白かったものも面白くなかったものも忖度なしで語るマンガレビューブログ。">
+  <link rel="canonical" href="https://ryah-manga.com/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="りゃーのマンガ感想">
+  <meta property="og:description" content="2000冊以上読んできたりゃーが、正直に語るマンガレビューブログ。">
+  <meta property="og:image" content="https://ryah-manga.com/img/og-default.jpg">
+  <meta property="og:url" content="https://ryah-manga.com/">
+  <meta property="og:site_name" content="りゃーのマンガ感想">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon.ico">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/components.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "りゃーのマンガ感想",
+    "url": "https://ryah-manga.com/",
+    "description": "2000冊以上読んできたりゃーによるマンガレビューブログ",
+    "author": { "@type": "Person", "name": "りゃー" }
+  }
+  </script>
+</head>
+<body>
+
+<site-header></site-header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-label">manga review blog</p>
+      <h1 class="hero-title">2000冊読んだ人間の<br>正直なマンガ感想</h1>
+      <p class="hero-desc">面白かったものも、面白くなかったものも。<br>忖度なしで語ります。</p>
+      <p class="hero-meta">運営：りゃー｜読了マンガ 2000冊以上</p>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="page-layout">
+
+    <div>
+      <!-- Latest Reviews -->
+      <section>
+        <h2 class="section-title">最新レビュー</h2>
+        <div class="review-grid" id="latest-reviews">
+          <!-- JS-rendered via reviews-index.js -->
+        </div>
+        <p class="mt-8 text-center">
+          <a href="/reviews/" class="btn btn--outline">レビューをすべて見る →</a>
+        </p>
+      </section>
+
+      <div class="ad-slot ad-slot--banner mt-8" aria-hidden="true">広告</div>
+
+      <!-- Category Links -->
+      <section class="mt-8">
+        <h2 class="section-title">カテゴリから探す</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;">
+          <a href="/category/shounen/" class="btn btn--outline">少年マンガ</a>
+          <a href="/category/shoujo/"  class="btn btn--outline">少女マンガ</a>
+          <a href="/category/seinen/"  class="btn btn--outline">青年マンガ</a>
+          <a href="/category/josei/"   class="btn btn--outline">女性マンガ</a>
+          <a href="/category/isekai/"  class="btn btn--outline">異世界・転生</a>
+          <a href="/category/completed/" class="btn btn--outline" style="border-color:#2e7d32;color:#2e7d32;">✓ 完結済み</a>
+          <a href="/category/ongoing/"   class="btn btn--outline" style="border-color:#1565c0;color:#1565c0;">▶ 連載中</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3>このブログについて</h3>
+        <p style="font-size:0.875rem;line-height:1.7;color:var(--color-text-muted);">
+          マンガを2000冊以上読んできた<strong>りゃー</strong>が運営する感想ブログです。
+          好きなものは好き、合わなかったものは合わなかったと、ありのままに書いています。
+        </p>
+        <a href="/about.html" class="btn btn--outline mt-4" style="width:100%;margin-top:12px;">プロフィールを見る</a>
+      </div>
+
+      <div class="ad-slot ad-slot--sidebar" aria-hidden="true">広告</div>
+
+      <div class="sidebar-box">
+        <h3>ジャンル</h3>
+        <nav class="sidebar-links">
+          <a href="/category/shounen/">▸ 少年マンガ</a>
+          <a href="/category/shoujo/">▸ 少女マンガ</a>
+          <a href="/category/seinen/">▸ 青年マンガ</a>
+          <a href="/category/josei/">▸ 女性マンガ</a>
+          <a href="/category/isekai/">▸ 異世界・転生</a>
+          <a href="/category/completed/">▸ 完結済み</a>
+          <a href="/category/ongoing/">▸ 連載中</a>
+        </nav>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<site-footer></site-footer>
+
+<script src="/js/components.js"></script>
+<script src="/js/reviews-index.js"></script>
+<script>
+  renderReviewGrid('latest-reviews', REVIEWS.slice(0, 6));
+</script>
+</body>
+</html>
