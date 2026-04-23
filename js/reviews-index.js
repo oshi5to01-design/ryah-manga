@@ -7,7 +7,6 @@ const REVIEWS = [
     title: "スラムダンク",
     titleRomaji: "SLAM DUNK",
     author: "井上雄彦",
-    score: 10,
     genre: ["shounen", "sports"],
     status: "completed",
     publishedDate: "2024-01-01",
@@ -18,7 +17,6 @@ const REVIEWS = [
 
 /* Render a review card element from metadata */
 function renderReviewCard(r) {
-  const stars = scoreToStars(r.score);
   const statusLabel = r.status === 'completed' ? '完結' : '連載中';
   const statusClass = r.status === 'completed' ? 'tag--completed' : 'tag--ongoing';
   return `
@@ -27,7 +25,6 @@ function renderReviewCard(r) {
         <div class="review-card__img-wrap">
           <img src="${r.coverImg}" alt="${r.title} 表紙" loading="lazy"
                onerror="this.src='/img/covers/no-image.jpg'">
-          <span class="review-card__score">${r.score}</span>
         </div>
         <div class="review-card__body">
           <div class="review-card__meta">
@@ -36,16 +33,10 @@ function renderReviewCard(r) {
           </div>
           <h3 class="review-card__title">${r.title}</h3>
           <p class="review-card__author">${r.author}</p>
-          <div class="review-card__stars" aria-label="評価 ${r.score}点">${stars}</div>
           <p class="review-card__excerpt">${r.excerpt}</p>
         </div>
       </a>
     </article>`;
-}
-
-function scoreToStars(score) {
-  const pct = (score / 10) * 100;
-  return `<span class="stars-outer"><span class="stars-inner" style="width:${pct}%"></span></span>`;
 }
 
 function genreLabel(slug) {

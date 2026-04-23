@@ -31,7 +31,7 @@
   <link rel="stylesheet" href="/css/components.css">
   <link rel="stylesheet" href="/css/review.css">
 
-  <!-- EDIT: JSON-LD (title, score, date) -->
+  <!-- EDIT: JSON-LD (title, date) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -42,12 +42,6 @@
       "author": { "@type": "Person", "name": "【著者名】" }
     },
     "author": { "@type": "Person", "name": "りゃー" },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "SCORE",
-      "bestRating": "10",
-      "worstRating": "1"
-    },
     "datePublished": "YYYY-MM-DD",
     "publisher": { "@type": "Organization", "name": "りゃーのマンガ感想" }
   }
@@ -105,44 +99,6 @@
               <span class="tag tag--genre">スポーツ</span>
             </div>
 
-            <div class="review-score-row">
-              <div class="score-badge">
-                <!-- EDIT: score -->
-                <span class="score-badge__number">8.5</span>
-                <span class="score-badge__label">/ 10</span>
-              </div>
-              <div>
-                <!-- EDIT: score (adjust width %) -->
-                <div class="stars-outer" aria-label="評価 8.5点">
-                  <span class="stars-inner" style="width:85%"></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sub-scores -->
-            <div class="sub-scores">
-              <!-- EDIT: each score value and bar width (score/5*100)% -->
-              <div class="sub-score">
-                <span class="sub-score__label">ストーリー</span>
-                <div class="sub-score__bar-wrap"><div class="sub-score__bar" style="width:90%"></div></div>
-                <span class="sub-score__value">4.5</span>
-              </div>
-              <div class="sub-score">
-                <span class="sub-score__label">絵</span>
-                <div class="sub-score__bar-wrap"><div class="sub-score__bar" style="width:80%"></div></div>
-                <span class="sub-score__value">4.0</span>
-              </div>
-              <div class="sub-score">
-                <span class="sub-score__label">キャラクター</span>
-                <div class="sub-score__bar-wrap"><div class="sub-score__bar" style="width:100%"></div></div>
-                <span class="sub-score__value">5.0</span>
-              </div>
-              <div class="sub-score">
-                <span class="sub-score__label">テンポ</span>
-                <div class="sub-score__bar-wrap"><div class="sub-score__bar" style="width:70%"></div></div>
-                <span class="sub-score__value">3.5</span>
-              </div>
-            </div>
           </div>
         </header>
 
