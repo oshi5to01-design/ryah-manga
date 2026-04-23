@@ -12,6 +12,39 @@ const REVIEWS = [
     publishedDate: "2024-01-01",
     coverImg: "/img/covers/slam-dunk.jpg",
     excerpt: "バスケットボールを知らなくても心が震える。マンガという表現の可能性を最大限に引き出した、まぎれもない傑作。"
+  },
+  {
+    slug: "death-note",
+    title: "デスノート",
+    titleRomaji: "DEATH NOTE",
+    author: "大場つぐみ / 小畑健",
+    genre: ["shounen", "thriller", "psychological"],
+    status: "completed",
+    publishedDate: "2026-04-23",
+    coverImg: "/img/covers/death-note.jpg",
+    excerpt: "心理戦マンガとして圧倒的な完成度。頭のいいキャラクターが本当に頭よく見える、数少ない作品のひとつ。"
+  },
+  {
+    slug: "kingdom",
+    title: "キングダム",
+    titleRomaji: "KINGDOM",
+    author: "原泰久",
+    genre: ["seinen", "historical", "action"],
+    status: "ongoing",
+    publishedDate: "2026-04-23",
+    coverImg: "/img/covers/kingdom.jpg",
+    excerpt: "スケールが桁違い。これだけ大きい話を、これだけの密度で描き続けられる作家が今の日本にいることが奇跡だと思っている。"
+  },
+  {
+    slug: "hunter-x-hunter",
+    title: "ハンターハンター",
+    titleRomaji: "HUNTER×HUNTER",
+    author: "冨樫義博",
+    genre: ["shounen", "action", "battle"],
+    status: "ongoing",
+    publishedDate: "2026-04-23",
+    coverImg: "/img/covers/hunter-x-hunter.jpg",
+    excerpt: "ネン能力の設計だけで天才と断言できる。能力バトルの到達点がここにある。"
   }
 ];
 
