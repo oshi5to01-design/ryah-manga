@@ -1,11 +1,11 @@
 /* ============================================================
-   りゃーのマンガ感想 — Review Page Styles
+   りゃーのマンガ感想 — Review Page Styles  [ Dark Editorial ]
    ============================================================ */
 
 /* --- Review Header --- */
 .review-header {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 130px 1fr;
   gap: var(--space-6);
   align-items: start;
   padding: var(--space-6) 0;
@@ -13,44 +13,69 @@
   border-bottom: 1px solid var(--color-border);
 }
 @media (min-width: 600px) {
-  .review-header { grid-template-columns: 180px 1fr; }
+  .review-header { grid-template-columns: 190px 1fr; gap: var(--space-8); }
 }
 
 .review-cover {
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  background: #f0f0ee;
+  background: var(--color-surface-2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-cover:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(232,0,61,.2);
 }
 
-.review-header__info { display: flex; flex-direction: column; gap: var(--space-3); }
+.review-header__info { display: flex; flex-direction: column; gap: var(--space-4); }
 
 .review-title {
   font-size: var(--font-size-2xl);
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
 }
-@media (min-width: 600px) { .review-title { font-size: var(--font-size-3xl); } }
+@media (min-width: 600px) {
+  .review-title { font-size: var(--font-size-4xl); }
+}
 
 .review-title-romaji {
+  display: block;
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: var(--space-1);
 }
 
 .review-meta-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
+  gap: var(--space-1) var(--space-5);
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
 }
-.review-meta-list dt { font-weight: 700; }
-.review-meta-list dd { margin: 0; }
-.review-meta-pair { display: flex; gap: var(--space-2); }
+.review-meta-list dt {
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.review-meta-list dd {
+  margin: 0;
+  color: var(--color-text);
+}
+.review-meta-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+}
 
 .review-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 
@@ -67,69 +92,115 @@
   border: 1px solid var(--color-border);
   border-left: 3px solid var(--color-accent);
   border-radius: var(--radius-md);
-  padding: var(--space-5);
-  margin: var(--space-6) 0;
+  padding: var(--space-5) var(--space-6);
+  margin: var(--space-8) 0;
 }
 .toc__title {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 700;
   margin-bottom: var(--space-3);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
-.toc ol { list-style: decimal; padding-left: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); }
-.toc a { font-size: var(--font-size-sm); color: var(--color-text); }
-.toc a:hover { color: var(--color-accent); }
+.toc ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  counter-reset: toc-counter;
+}
+.toc li {
+  counter-increment: toc-counter;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  font-size: var(--font-size-xs);
+  color: var(--color-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 1.8em;
+}
+.toc a {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+.toc a:hover { color: var(--color-text); }
 
 /* --- Article Prose --- */
 .review-body {
   max-width: var(--content-max);
-  line-height: 1.9;
+  line-height: 1.95;
+  color: var(--color-text);
 }
 .review-body h2 {
   font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin: var(--space-10) 0 var(--space-4);
-  padding-bottom: var(--space-2);
-  border-bottom: 2px solid var(--color-border);
+  font-weight: 900;
+  margin: var(--space-12) 0 var(--space-5);
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+.review-body h2::before {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 40px; height: 2px;
+  background: var(--color-accent);
 }
 .review-body h3 {
   font-size: var(--font-size-lg);
   font-weight: 700;
-  margin: var(--space-6) 0 var(--space-3);
+  margin: var(--space-8) 0 var(--space-3);
+  color: var(--color-text);
 }
-.review-body p { margin-bottom: var(--space-4); }
+.review-body p { margin-bottom: var(--space-5); }
 .review-body ul, .review-body ol {
-  padding-left: var(--space-6);
-  margin-bottom: var(--space-4);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
-.review-body ul { list-style: disc; }
+.review-body ul { list-style: none; }
+.review-body ul li { position: relative; padding-left: var(--space-4); }
+.review-body ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
 .review-body ol { list-style: decimal; }
-.review-body strong { font-weight: 700; }
+.review-body ol li { padding-left: var(--space-2); }
+.review-body strong { font-weight: 700; color: var(--color-text); }
 .review-body em { font-style: italic; color: var(--color-text-muted); }
 
 /* --- Spoiler --- */
 .spoiler {
-  background: #1a1a1a;
-  color: #1a1a1a;
+  background: var(--color-surface-2);
+  color: var(--color-surface-2);
   border-radius: var(--radius-sm);
   padding: 2px var(--space-2);
   cursor: pointer;
   transition: color var(--transition);
   user-select: none;
+  border: 1px solid var(--color-border);
 }
-.spoiler:hover, .spoiler.revealed { color: #fff; }
+.spoiler:hover, .spoiler.revealed { color: var(--color-text); }
 
 /* --- Review Page Layout --- */
 .review-page-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-8);
-  padding: var(--space-6) 0 var(--space-12);
+  padding: var(--space-4) 0 var(--space-16);
 }
 @media (min-width: 960px) {
   .review-page-layout {
@@ -143,13 +214,22 @@
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   display: flex;
-  gap: var(--space-4);
-  padding-top: var(--space-4);
+  gap: var(--space-5);
+  padding-top: var(--space-5);
   border-top: 1px solid var(--color-border);
-  margin-top: var(--space-8);
+  margin-top: var(--space-10);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* --- Sticky Sidebar on Review Pages --- */
 @media (min-width: 960px) {
   .review-sidebar { position: sticky; top: 80px; }
 }
+
+/* --- Page transition fade-in --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+main { animation: fadeUp 0.45s ease both; }
