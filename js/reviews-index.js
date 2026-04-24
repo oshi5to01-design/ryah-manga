@@ -44,7 +44,7 @@ const REVIEWS = [
     status: "ongoing",
     publishedDate: "2026-04-23",
     coverImg: "/img/covers/hunter-x-hunter.jpg",
-    excerpt: "ネン能力の設計だけで天才と断言できる。能力バトルの到達点がここにある。"
+    excerpt: "念能力が出てきてから別次元に面白い。自分と向き合い、自分だけの能力を定めていく思慮深さに惹かれる。キメラアント編は賛しかない、涙ちょちょぎれる。"
   }
 ];
 
