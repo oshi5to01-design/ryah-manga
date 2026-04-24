@@ -22,7 +22,7 @@ const REVIEWS = [
     status: "completed",
     publishedDate: "2026-04-23",
     coverImg: "/img/covers/death-note.jpg",
-    excerpt: "心理戦マンガとして圧倒的な完成度。頭のいいキャラクターが本当に頭よく見える、数少ない作品のひとつ。"
+    excerpt: "人生ナンバーワンのマンガ。読み始めたら止まれない、寝られない。2000冊以上読んできた中で、これを超える読書体験にまだ出会っていない。"
   },
   {
     slug: "kingdom",
