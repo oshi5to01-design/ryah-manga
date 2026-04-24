@@ -33,7 +33,7 @@ const REVIEWS = [
     status: "ongoing",
     publishedDate: "2026-04-23",
     coverImg: "/img/covers/kingdom.jpg",
-    excerpt: "スケールが桁違い。これだけ大きい話を、これだけの密度で描き続けられる作家が今の日本にいることが奇跡だと思っている。"
+    excerpt: "ここ数年で一番読み返している漫画。合従軍編・蕞の戦いが熱すぎて、何度読み返しても毎度面白い。羌瘣がつよかわいい。"
   },
   {
     slug: "hunter-x-hunter",
