@@ -8,9 +8,9 @@ class SiteHeader extends HTMLElement {
       this.innerHTML = await res.text();
       this._highlightCurrentPage();
     } catch {
-      this.innerHTML = `<header class="site-header"><div class="container">
-        <a href="/" class="site-logo">りゃーの<span>マンガ</span>感想</a>
-      </div></header>`;
+      this.innerHTML = `<header class="site-header">
+        <a href="/" class="site-logo">りゃーの<em>マンガ</em>感想</a>
+      </header>`;
     }
   }
 
@@ -19,7 +19,7 @@ class SiteHeader extends HTMLElement {
     this.querySelectorAll('.site-nav a').forEach(a => {
       const href = a.getAttribute('href');
       if (href !== '/' && path.startsWith(href)) {
-        a.style.color = 'var(--color-accent)';
+        a.style.color = 'var(--color-text)';
       }
     });
   }
@@ -31,10 +31,16 @@ class SiteFooter extends HTMLElement {
       const res = await fetch('/partials/footer.html');
       if (!res.ok) throw new Error(res.status);
       this.innerHTML = await res.text();
+      // Re-execute scripts inserted via innerHTML
+      this.querySelectorAll('script').forEach(oldScript => {
+        const newScript = document.createElement('script');
+        newScript.textContent = oldScript.textContent;
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
     } catch {
-      this.innerHTML = `<footer class="site-footer"><div class="container">
-        <p class="footer-copy">&copy; ${new Date().getFullYear()} りゃーのマンガ感想</p>
-      </div></footer>`;
+      this.innerHTML = `<footer class="site-footer">
+        <p class="footer-brand">&copy; ${new Date().getFullYear()} りゃーのマンガ感想</p>
+      </footer>`;
     }
   }
 }
@@ -47,9 +53,9 @@ customElements.define('site-footer', SiteFooter);
    Editorial Enhancements — Reading Progress, TOC, Reveal
    ============================================================ */
 
-/* Reading progress bar — only on review pages */
+/* Reading progress bar — only on review article pages */
 function initReadingProgress() {
-  const article = document.querySelector('.review-page-layout article');
+  const article = document.querySelector('.article-layout .article-body');
   if (!article) return;
 
   const bar = document.createElement('div');
@@ -76,13 +82,12 @@ function initReadingProgress() {
   update();
 }
 
-/* Active TOC highlight — observes review-body h2s */
+/* Active TOC highlight — observes article-body section[id] */
 function initActiveTOC() {
-  // TOC is built by inline scripts; wait a tick for it to populate.
   setTimeout(() => {
-    const tocLinks = document.querySelectorAll('.toc a');
-    const headings = document.querySelectorAll('.review-body h2');
-    if (!tocLinks.length || !headings.length) return;
+    const tocLinks = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('.article-body section[id]');
+    if (!tocLinks.length || !sections.length) return;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -90,20 +95,21 @@ function initActiveTOC() {
           const id = entry.target.id;
           tocLinks.forEach(a => {
             const li = a.closest('li');
-            if (!li) return;
-            li.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+            const isActive = a.getAttribute('href') === '#' + id;
+            if (li) li.classList.toggle('is-active', isActive);
+            a.classList.toggle('is-active', isActive);
           });
         }
       });
     }, { rootMargin: '-15% 0px -70% 0px' });
 
-    headings.forEach(h => observer.observe(h));
-  }, 150);
+    sections.forEach(s => observer.observe(s));
+  }, 200);
 }
 
-/* Reveal-on-scroll for h2 underlines and verdict box */
+/* Reveal-on-scroll for body sections */
 function initRevealOnScroll() {
-  const targets = document.querySelectorAll('.review-body h2, .verdict-box');
+  const targets = document.querySelectorAll('.body-section');
   if (!targets.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -113,7 +119,7 @@ function initRevealOnScroll() {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 });
 
   targets.forEach(t => observer.observe(t));
 }

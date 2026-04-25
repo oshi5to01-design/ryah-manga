@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>りゃーのマンガ感想 — 2000冊以上読んだ人間の正直レビュー</title>
+  <title>りゃーのマンガ感想 — 本音レビューマガジン</title>
   <meta name="description" content="2000冊以上読んできたりゃーが、面白かったものも面白くなかったものも忖度なしで語るマンガレビューブログ。">
   <link rel="canonical" href="https://ryah-manga.com/">
 
-  <!-- OGP -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="りゃーのマンガ感想">
   <meta property="og:description" content="2000冊以上読んできたりゃーが、正直に語るマンガレビューブログ。">
@@ -18,12 +17,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ryah_manga">
 
-  <!-- Favicon -->
   <link rel="icon" href="/img/favicon.ico">
 
-  <link rel="stylesheet" href="/css/style.css?v=2">
-  <link rel="stylesheet" href="/css/components.css?v=2">
-  <link rel="stylesheet" href="/css/enhancements.css?v=2">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+  <link rel="stylesheet" href="/css/components.css?v=3">
+  <link rel="stylesheet" href="/css/enhancements.css?v=3">
 
   <script type="application/ld+json">
   {
@@ -40,85 +38,109 @@
 
 <site-header></site-header>
 
+<!-- HERO: Featured Review -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-inner">
-      <p class="hero-label">manga review blog</p>
-      <h1 class="hero-title">2000冊読んだ人間の<br>正直なマンガ感想</h1>
-      <p class="hero-desc">面白かったものも、面白くなかったものも。<br>忖度なしで語ります。</p>
-      <p class="hero-meta">運営：りゃー｜読了マンガ 2000冊以上</p>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-issue">Vol.01 &nbsp;/&nbsp; Apr 2026</span>
+      <div class="hero-divider-h"></div>
+      <span class="hero-issue">2000冊以上の本音</span>
+    </div>
+
+    <div class="hero-body">
+      <span class="hero-kicker">今月の特集レビュー</span>
+      <h1 class="hero-title">DEATH<br>NOTE</h1>
+      <p class="hero-title-ja">デスノート — 大場つぐみ × 小畑健</p>
+      <blockquote class="hero-quote">
+        人生ナンバーワンのマンガ。読み始めたら止まれない、寝られない。2000冊以上読んできた中で、これを超える読書体験にまだ出会っていない。
+      </blockquote>
+    </div>
+
+    <div class="hero-foot">
+      <div class="hero-author">
+        <div class="hero-avatar">R</div>
+        <div>
+          <span class="hero-author-name">ryah</span>
+          <span class="hero-author-sub">2000冊以上読んできた人間の正直レビュー</span>
+        </div>
+      </div>
+      <a href="/reviews/death-note/" class="btn btn--primary">レビューを読む &nbsp;→</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="hero-bg-lines"></div>
+      <div class="hero-bg-text">DN</div>
+      <div class="hero-cover-frame">
+        <img src="/img/covers/death-note.jpg" alt="デスノート 表紙"
+             class="hero-cover-img"
+             onerror="this.style.display='none'">
+      </div>
+      <div class="hero-vol-chip">全12巻 &nbsp;完結</div>
+    </div>
+    <div class="hero-meta-strip">
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">12</span>
+        <span class="hero-meta-key">巻数</span>
+      </div>
+      <div class="hero-meta-sep"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">2003</span>
+        <span class="hero-meta-key">連載開始</span>
+      </div>
+      <div class="hero-meta-sep"></div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-val">集英社</span>
+        <span class="hero-meta-key">出版社</span>
+      </div>
     </div>
   </div>
 </section>
 
-<main class="container">
-  <div class="page-layout">
+<!-- LATEST REVIEWS -->
+<div class="section-head">
+  <span class="section-kicker">Latest</span>
+  <h2 class="section-title">最近のレビュー</h2>
+  <span class="section-count" id="latest-count"></span>
+</div>
 
-    <div>
-      <!-- Latest Reviews -->
-      <section>
-        <h2 class="section-title">最新レビュー</h2>
-        <div class="review-grid" id="latest-reviews">
-          <!-- JS-rendered via reviews-index.js -->
-        </div>
-        <p class="mt-8 text-center">
-          <a href="/reviews/" class="btn btn--outline">レビューをすべて見る →</a>
-        </p>
-      </section>
+<div class="reviews-grid" id="latest-reviews">
+  <!-- JS-rendered via reviews-index.js -->
+</div>
 
-      <div class="ad-slot ad-slot--banner mt-8" aria-hidden="true">広告</div>
-
-      <!-- Category Links -->
-      <section class="mt-8">
-        <h2 class="section-title">カテゴリから探す</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;">
-          <a href="/category/shounen/" class="btn btn--outline">少年マンガ</a>
-          <a href="/category/shoujo/"  class="btn btn--outline">少女マンガ</a>
-          <a href="/category/seinen/"  class="btn btn--outline">青年マンガ</a>
-          <a href="/category/josei/"   class="btn btn--outline">女性マンガ</a>
-          <a href="/category/isekai/"  class="btn btn--outline">異世界・転生</a>
-          <a href="/category/completed/" class="btn btn--outline" style="border-color:#2e7d32;color:#2e7d32;">✓ 完結済み</a>
-          <a href="/category/ongoing/"   class="btn btn--outline" style="border-color:#1565c0;color:#1565c0;">▶ 連載中</a>
-        </div>
-      </section>
-    </div>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-box">
-        <h3>このブログについて</h3>
-        <p style="font-size:0.875rem;line-height:1.7;color:var(--color-text-muted);">
-          マンガを2000冊以上読んできた<strong>りゃー</strong>が運営する感想ブログです。
-          好きなものは好き、合わなかったものは合わなかったと、ありのままに書いています。
-        </p>
-        <a href="/about.html" class="btn btn--outline mt-4" style="width:100%;margin-top:12px;">プロフィールを見る</a>
-      </div>
-
-      <div class="ad-slot ad-slot--sidebar" aria-hidden="true">広告</div>
-
-      <div class="sidebar-box">
-        <h3>ジャンル</h3>
-        <nav class="sidebar-links">
-          <a href="/category/shounen/">▸ 少年マンガ</a>
-          <a href="/category/shoujo/">▸ 少女マンガ</a>
-          <a href="/category/seinen/">▸ 青年マンガ</a>
-          <a href="/category/josei/">▸ 女性マンガ</a>
-          <a href="/category/isekai/">▸ 異世界・転生</a>
-          <a href="/category/completed/">▸ 完結済み</a>
-          <a href="/category/ongoing/">▸ 連載中</a>
-        </nav>
-      </div>
-    </aside>
-
+<!-- CATEGORIES -->
+<div class="categories">
+  <div class="categories-label-wrap">
+    <span class="categories-label">Genre</span>
   </div>
-</main>
+  <div class="categories-body">
+    <a href="/category/shounen/" class="cat-tag">少年マンガ</a>
+    <a href="/category/shoujo/" class="cat-tag">少女マンガ</a>
+    <a href="/category/seinen/" class="cat-tag">青年マンガ</a>
+    <a href="/category/josei/" class="cat-tag">女性マンガ</a>
+    <a href="/category/isekai/" class="cat-tag">異世界・転生</a>
+    <a href="/category/completed/" class="cat-tag cat-tag--completed">完結済</a>
+    <a href="/category/ongoing/" class="cat-tag cat-tag--ongoing">連載中</a>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <blockquote class="about-quote">
+    <strong>2000冊以上読んできた人間の、正直なレビュー。</strong><br>
+    忖度なし、宣伝なし。面白いと思ったものだけを、面白いと書く。
+  </blockquote>
+  <a href="/about.html" class="about-link">ryahについて →</a>
+</div>
 
 <site-footer></site-footer>
 
-<script src="/js/components.js?v=2"></script>
-<script src="/js/reviews-index.js?v=2"></script>
+<script src="/js/components.js?v=3"></script>
+<script src="/js/reviews-index.js?v=3"></script>
 <script>
-  renderReviewGrid('latest-reviews', REVIEWS.slice(0, 6));
+  renderEditorialGrid('latest-reviews', REVIEWS.slice(0, 4));
+  document.getElementById('latest-count').textContent = String(REVIEWS.length).padStart(2, '0') + ' reviews';
 </script>
 </body>
 </html>

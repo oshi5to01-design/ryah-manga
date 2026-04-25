@@ -3,57 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>完結済みマンガ レビュー一覧 | りゃーのマンガ感想</title>
-  <meta name="description" content="完結済みマンガのレビュー一覧。一気読みできる作品を正直に評価します。">
+  <title>完結済みマンガ レビュー一覧 — りゃーのマンガ感想</title>
+  <meta name="description" content="完結済みマンガのレビュー一覧。りゃーが正直に評価します。">
   <link rel="canonical" href="https://ryah-manga.com/category/completed/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="完結済みマンガ レビュー | りゃーのマンガ感想">
+  <meta property="og:title" content="完結済みマンガ レビュー — りゃーのマンガ感想">
   <meta property="og:image" content="https://ryah-manga.com/img/og-default.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ryah_manga">
   <link rel="icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=2">
-  <link rel="stylesheet" href="/css/components.css?v=2">
-  <link rel="stylesheet" href="/css/enhancements.css?v=2">
+  <link rel="stylesheet" href="/css/style.css?v=3">
+  <link rel="stylesheet" href="/css/components.css?v=3">
+  <link rel="stylesheet" href="/css/enhancements.css?v=3">
 </head>
 <body>
+
 <site-header></site-header>
-<main class="container">
-  <div class="page-layout">
-    <div>
-      <div class="category-header">
-        <h1>完結済みマンガ</h1>
-        <p>一気読みしたい人へ。<span id="review-count">0</span> 件のレビュー</p>
-      </div>
-      <div class="review-grid" id="category-reviews"></div>
-      <p id="no-results" style="display:none;color:var(--color-text-muted);padding:24px 0;">まだレビューがありません。</p>
-    </div>
-    <aside class="sidebar">
-      <div class="sidebar-box">
-        <h3>カテゴリ</h3>
-        <nav class="sidebar-links">
-          <a href="/category/shounen/">▸ 少年マンガ</a>
-          <a href="/category/shoujo/">▸ 少女マンガ</a>
-          <a href="/category/seinen/">▸ 青年マンガ</a>
-          <a href="/category/josei/">▸ 女性マンガ</a>
-          <a href="/category/isekai/">▸ 異世界・転生</a>
-          <a href="/category/completed/" style="color:#2e7d32;font-weight:700;">✓ 完結済み</a>
-          <a href="/category/ongoing/">▶ 連載中</a>
-        </nav>
-      </div>
-      <div class="ad-slot ad-slot--sidebar" aria-hidden="true">広告</div>
-    </aside>
-  </div>
-</main>
+
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="/">ホーム</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="/reviews/">レビュー一覧</a>
+  <span class="breadcrumb-sep">›</span>
+  <span class="breadcrumb-current">完結済みマンガ</span>
+</nav>
+
+<div class="section-head">
+  <span class="section-kicker">Completed</span>
+  <h1 class="section-title">完結済みマンガ</h1>
+  <span class="section-count" id="review-count"></span>
+</div>
+
+<div class="reviews-grid" id="category-reviews"></div>
+
+<p id="no-results" style="display:none;padding:3rem var(--gutter);text-align:center;font-family:var(--font-mono);font-size:0.8rem;color:var(--color-text-muted);letter-spacing:0.1em;">
+  まだ完結済みマンガのレビューがありません。
+</p>
+
 <site-footer></site-footer>
-<script src="/js/components.js?v=2"></script>
-<script src="/js/reviews-index.js?v=2"></script>
+
+<script src="/js/components.js?v=3"></script>
+<script src="/js/reviews-index.js?v=3"></script>
 <script>
   const filtered = REVIEWS.filter(r => r.status === 'completed');
-  document.getElementById('review-count').textContent = filtered.length;
-  if (filtered.length) renderReviewGrid('category-reviews', filtered);
-  else document.getElementById('no-results').style.display = 'block';
+  document.getElementById('review-count').textContent = String(filtered.length).padStart(2, '0') + ' reviews';
+  if (filtered.length) {
+    renderEditorialGrid('category-reviews', filtered);
+  } else {
+    document.getElementById('category-reviews').style.display = 'none';
+    document.getElementById('no-results').style.display = 'block';
+  }
 </script>
+
 </body>
 </html>
