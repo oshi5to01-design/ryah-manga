@@ -11,3 +11,9 @@ desktop.ini
 
 # Logs
 *.log
+
+# Claude Code session files (contain credentials)
+.claude/
+
+# Wrangler cache
+.wrangler/
