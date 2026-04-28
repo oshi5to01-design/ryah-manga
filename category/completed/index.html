@@ -4,18 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>完結済みマンガ レビュー一覧 — りゃーのマンガ感想</title>
-  <meta name="description" content="完結済みマンガのレビュー一覧。りゃーが正直に評価します。">
+  <meta name="description" content="完結したマンガのレビュー一覧。一気読みできる名作・最終回まで見届けた作品を、2000冊以上読んだりゃーが本音で語ります。">
   <link rel="canonical" href="https://ryah-manga.com/category/completed/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="完結済みマンガ レビュー — りゃーのマンガ感想">
+  <meta property="og:description" content="完結したマンガのレビュー一覧。一気読みできる名作・最終回まで見届けた作品を、2000冊以上読んだりゃーが本音で語ります。">
   <meta property="og:image" content="https://ryah-manga.com/img/og-default.jpg">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@ryah_manga">
-  <link rel="icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css?v=3">
-  <link rel="stylesheet" href="/css/components.css?v=3">
-  <link rel="stylesheet" href="/css/enhancements.css?v=3">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="alternate icon" href="/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/components.css?v=5">
+  <link rel="stylesheet" href="/css/enhancements.css?v=5">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CHY4ZF6W1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1CHY4ZF6W1');
+  </script>
 </head>
 <body>
 
@@ -43,8 +54,8 @@
 
 <site-footer></site-footer>
 
-<script src="/js/components.js?v=3"></script>
-<script src="/js/reviews-index.js?v=3"></script>
+<script src="/js/components.js?v=5"></script>
+<script src="/js/reviews-index.js?v=5"></script>
 <script>
   const filtered = REVIEWS.filter(r => r.status === 'completed');
   document.getElementById('review-count').textContent = String(filtered.length).padStart(2, '0') + ' reviews';

@@ -3,6 +3,36 @@
 
 const REVIEWS = [
   {
+    slug: "sono-bisque-doll",
+    title: "その着せ替え人形は恋をする",
+    titleRomaji: "SONO BISQUE DOLL",
+    titleEn: "My Dress-Up Darling",
+    author: "福田晋一",
+    genre: ["seinen", "romance", "comedy"],
+    genreLabels: ["青年", "ラブコメ", "コスプレ"],
+    status: "completed",
+    volumes: "全15巻",
+    publishedDate: "2026-04-28",
+    coverImg: "/img/covers/sono-bisque-doll.jpg",
+    excerpt: "色々なキャラのコスがどれも面白いが、圧倒的にハニエルコスのパートが好き。新菜の衣装、まりんのモデル経験が活きた立ち振る舞い・視線、ぞっくぞくする。",
+    pull: "コミケ行ったことないけど、まりんのハニエルコスがそこにいるなら、本気で行きたい。"
+  },
+  {
+    slug: "ore-monogatari",
+    title: "俺物語!!",
+    titleRomaji: "ORE MONOGATARI!!",
+    titleEn: "My Love Story!!",
+    author: "河原和音 / アルコ",
+    genre: ["shoujo", "romance", "comedy"],
+    genreLabels: ["少女", "恋愛", "友情"],
+    status: "completed",
+    volumes: "全13巻",
+    publishedDate: "2026-04-27",
+    coverImg: "/img/covers/ore-monogatari.jpg",
+    excerpt: "なんてったって、たけおが良すぎる。男女問わず、たけおを嫌いな人間はいないと思う（友達としてね）。少女マンガにありがちなイヤなやつが一人もいない、終始気持ちよく読める希少な傑作。",
+    pull: "登場人物に悪意を持った人間が一人もいない。それで退屈しないのは奇跡に近い。"
+  },
+  {
     slug: "death-note",
     title: "デスノート",
     titleRomaji: "DEATH NOTE",
